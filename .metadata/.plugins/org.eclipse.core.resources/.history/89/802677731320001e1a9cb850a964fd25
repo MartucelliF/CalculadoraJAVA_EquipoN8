@@ -1,0 +1,433 @@
+import java.awt.EventQueue;
+
+		import javax.swing.JFrame;
+
+		import javax.swing.JButton;
+
+	
+		import java.awt.event.ActionListener;
+
+		import java.awt.event.ActionEvent;
+
+		import javax.swing.SwingConstants;
+
+		import java.awt.Color;
+
+		import javax.swing.JTextField;
+
+		import java.awt.Font;
+
+		import java.lang.Math;
+		
+		import java.text.DecimalFormat;
+		
+		public class Aritmetica extends JFrame {
+			
+			private static final long serialVersionUID = 1L;
+			//VARIABLES---------------------
+			
+			double numero1=0;
+			double numero2=0;
+			double resultado=0;
+			int cont=0;
+			String numeroaux;
+			String operacion="sas";
+			String seleccionar;
+			
+			//-------------------------------
+		    private JTextField textField;
+		    public static void main(String[] args) {
+
+		        EventQueue.invokeLater(new Runnable() {
+
+		            public void run() {
+
+		                try {
+
+		                	Aritmetica frame = new Aritmetica();
+		                    frame.setVisible(true);
+
+		                } catch (Exception e) {
+
+		                    e.printStackTrace();
+
+		                }
+
+		            }
+
+		        });
+
+		    }
+
+
+
+		    public Aritmetica() {
+		  
+
+		    	DecimalFormat df = new DecimalFormat("#.########"); // Se define que no se muestren los ceros de mas en numeros reales
+		    	
+		    	setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+		    	
+		        setBounds(100, 100, 267, 350);
+		        getContentPane().setLayout(null);
+		        textField = new JTextField();
+		        textField.setHorizontalAlignment(SwingConstants.RIGHT);
+		        textField.setFont(new Font("Tahoma", Font.PLAIN, 22));
+		        textField.setBounds(10, 11, 229, 68);
+		        getContentPane().add(textField);
+		        textField.setColumns(10);
+
+		        
+
+		    	JButton btnNewButton_9_3 = new JButton("0");
+				btnNewButton_9_3.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						textField.setText(textField.getText() + "0");
+					}
+
+				});
+
+				btnNewButton_9_3.setBounds(69, 267, 50, 33);
+				getContentPane().add(btnNewButton_9_3);
+		        
+				
+		        
+		        JButton btnNewButton = new JButton("1");
+		        btnNewButton.addActionListener(new ActionListener() {
+		            public void actionPerformed(ActionEvent e) {
+		                textField.setText(textField.getText() + "1");
+		            }
+
+		        });
+
+		        btnNewButton.setBounds(10, 134, 50, 33);
+		        getContentPane().add(btnNewButton);
+
+
+		        
+		        JButton btnNewButton_12 = new JButton("2");
+		        btnNewButton_12.addActionListener(new ActionListener() {
+		            public void actionPerformed(ActionEvent e) {
+		                textField.setText(textField.getText() + "2");
+		            }
+
+		        });
+
+		        btnNewButton_12.setBounds(69, 134, 50, 33);
+		        getContentPane().add(btnNewButton_12);
+
+		        
+		        
+		        JButton btnNewButton_1 = new JButton("3");
+		        btnNewButton_1.addActionListener(new ActionListener() {
+		            public void actionPerformed(ActionEvent e) {
+		                textField.setText(textField.getText() + "3");
+		            }
+
+		        });
+
+		        btnNewButton_1.setBounds(129, 134, 50, 34);
+		        getContentPane().add(btnNewButton_1);
+
+		        
+
+				JButton btnNewButton_3 = new JButton("4");
+				btnNewButton_3.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+				    textField.setText(textField.getText() + "4");
+		
+				    }
+		
+				    });
+		
+				btnNewButton_3.setBounds(10, 178, 50, 33);
+				getContentPane().add(btnNewButton_3);
+		
+		
+				
+				JButton btnNewButton_4 = new JButton("5");
+				btnNewButton_4.addActionListener(new ActionListener(){
+					public void actionPerformed(ActionEvent e) {
+						textField.setText(textField.getText() + "5");
+					}
+		
+				});
+		
+				btnNewButton_4.setBounds(69, 178, 50, 33);
+				getContentPane().add(btnNewButton_4);
+		
+				
+		
+				JButton btnNewButton_5 = new JButton("6");
+				btnNewButton_5.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						textField.setText(textField.getText() + "6");
+					}
+		
+				});
+		
+				btnNewButton_5.setBounds(129, 179, 50, 33);
+				getContentPane().add(btnNewButton_5);
+		
+		
+				
+				JButton btnNewButton_9_1 = new JButton("7");
+				btnNewButton_9_1.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e ) {
+						textField.setText(textField.getText() + "7");
+					}
+		
+				});
+		
+				btnNewButton_9_1.setBounds(10, 222, 50, 33);
+				getContentPane().add(btnNewButton_9_1);
+				
+				
+				
+				JButton btnNewButton_9 = new JButton("8");
+				btnNewButton_9.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						textField.setText(textField.getText() + "8");
+					}
+		
+				});
+		
+				btnNewButton_9.setBounds(69, 223, 50, 33);
+				getContentPane().add(btnNewButton_9);
+		
+				
+				
+				JButton btnNewButton_8 = new JButton("9");
+				btnNewButton_8.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						textField.setText(textField.getText() + "9");
+					}
+		
+				});
+		
+				btnNewButton_8.setBounds(129, 223, 50, 33);
+				getContentPane().add(btnNewButton_8);
+		
+				
+				
+				JButton btnNewButton_6 = new JButton("-");
+				btnNewButton_6.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						numero1 = Double.parseDouble(textField.getText());
+						textField.setText("");
+						operacion ="-";
+					}
+		
+				});
+		
+				btnNewButton_6.setBackground(new Color(128, 255, 255));
+				btnNewButton_6.setBounds(189, 178, 50, 33);
+				getContentPane().add(btnNewButton_6);
+		
+				
+		
+				JButton btnNewButton_7 = new JButton("X");
+				btnNewButton_7.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						numero1 = Double.parseDouble(textField.getText());
+						textField.setText("");
+						operacion ="*";
+					}
+		
+				});
+		
+				btnNewButton_7.setBackground(new Color(128, 255, 255));
+				btnNewButton_7.setBounds(189, 222, 50, 33);
+				getContentPane().add(btnNewButton_7);
+		
+		
+				
+				JButton btnNewButton_9_2 = new JButton("/");
+				btnNewButton_9_2.setBackground(new Color(128, 255, 255));
+				btnNewButton_9_2.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						numero1 = Double.parseDouble(textField.getText());
+						textField.setText("");
+						operacion ="/";
+		
+					}
+		
+				});
+		
+				btnNewButton_9_2.setBounds(189, 267, 50, 33);
+				getContentPane().add(btnNewButton_9_2);
+		
+		
+				
+				JButton btnNewButton_9_4 = new JButton(",");
+				btnNewButton_9_4.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						textField.setText(textField.getText() + ".");
+					}
+		
+				});
+		
+				btnNewButton_9_4.setBounds(10, 267, 50, 33);
+				getContentPane().add(btnNewButton_9_4);
+		
+				
+				
+				JButton btnNewButton_6_1 = new JButton("+");
+				btnNewButton_6_1.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						numero1 = Double.parseDouble(textField.getText());
+						textField.setText("");
+						operacion ="+";
+		
+					}
+		
+				});
+		
+				
+		
+				JButton btnNewButton_7_2 = new JButton("^");
+				btnNewButton_7_2.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						numero1 = Double.parseDouble(textField.getText());
+						textField.setText("");
+						operacion ="^";
+					}
+				});
+				
+				btnNewButton_7_2.setBackground(new Color(128, 255, 255));
+				btnNewButton_7_2.setBounds(129, 90, 50, 33);
+				getContentPane().add(btnNewButton_7_2);
+				
+				
+				
+				JButton btnNewButton_9_2_2 = new JButton("raiz");
+				btnNewButton_9_2_2.setFont(new Font("Tahoma", Font.PLAIN, 10));
+				btnNewButton_9_2_2.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						numero1 = Double.parseDouble(textField.getText());
+						textField.setText("");
+						operacion ="raiz";
+					}
+				});
+				
+				btnNewButton_9_2_2.setBackground(new Color(128, 255, 255));
+				btnNewButton_9_2_2.setBounds(189, 90, 50, 33);
+				getContentPane().add(btnNewButton_9_2_2);
+				
+				
+				
+				JButton btnNewButton_9_5 = new JButton("=");
+				btnNewButton_9_5.setBackground(new Color(128, 255, 0));
+				btnNewButton_9_5.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) 
+		{
+				
+				if(textField.getText().isEmpty())
+					{
+					textField.setText("");
+					}
+				else
+				   {
+					cont++; //contador que confirma que el boton de resultado se ha utilizado una vez
+					if(cont>1) 
+						{
+						numero1 = Double.parseDouble(textField.getText()); // Luego de realizar una operacion, es necesario cambiar el orden de los numeros para que la calculadora funcione correctamente
+						}
+					else
+						{
+						numero2 = Double.parseDouble(textField.getText()); //"numero2" funciona como un ans, es decir que se puede seguir trabajando con el si se pulsa el boton igual varias veces
+						}
+						
+						if(operacion == "+") {
+							resultado = numero1+numero2;
+							seleccionar = df.format(resultado); // muestra el resultado sin ceros de mas
+							seleccionar = seleccionar.replace(",", "."); // reemplaza las comas (,) a puntos (.) para evitar errores matematicos
+			                textField.setText(seleccionar);
+			                
+						}
+						
+						if(operacion == "-") {
+							resultado = numero1-numero2;
+							seleccionar = df.format(resultado); // muestra el resultado sin ceros de mas
+							seleccionar = seleccionar.replace(",", "."); // reemplaza las comas (,) a puntos (.) para evitar errores matematicos
+			                textField.setText(seleccionar);
+						}
+						
+						if(operacion == "*") {
+							resultado = numero1*numero2;
+							seleccionar = df.format(resultado); // muestra el resultado sin ceros de mas
+							seleccionar = seleccionar.replace(",", "."); // reemplaza las comas (,) a puntos (.) para evitar errores matematicos
+			                textField.setText(seleccionar);
+						}
+							
+						if(operacion == "/") {
+							resultado = numero1/numero2;
+							seleccionar = df.format(resultado); // muestra el resultado sin ceros de mas
+							seleccionar = seleccionar.replace(",", "."); // reemplaza las comas (,) a puntos (.) para evitar errores matematicos
+			                textField.setText(seleccionar);
+						
+						}
+						
+						if(operacion == "^") {
+							resultado=Math.pow(numero1,numero2);
+							seleccionar = df.format(resultado); // muestra el resultado sin ceros de mas
+							seleccionar = seleccionar.replace(",", "."); // reemplaza las comas (,) a puntos (.) para evitar errores matematicos
+			                textField.setText(seleccionar);
+						}
+						
+						if(operacion == "raiz") {
+							resultado=Math.pow(numero1, 1.0 / numero2);
+			                seleccionar = df.format(resultado); // muestra el resultado sin ceros de mas
+			                seleccionar = seleccionar.replace(",", "."); // reemplaza las comas (,) a puntos (.) para evitar errores matematicos
+			                textField.setText(seleccionar);
+						}
+
+				   }	
+		}
+			
+				});
+		
+				btnNewButton_9_5.setBounds(131, 267, 48, 33);
+				getContentPane().add(btnNewButton_9_5);
+				
+				
+				
+				btnNewButton_6_1.setBackground(new Color(128, 255, 255));
+				btnNewButton_6_1.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+		
+				}
+		
+				});
+		
+				btnNewButton_6_1.setBounds(189, 134, 50, 33);
+				getContentPane().add(btnNewButton_6_1);
+		
+		
+		
+				JButton btnNewButton_7_1 = new JButton("C");
+				btnNewButton_7_1.addActionListener(new ActionListener() {
+				    public void actionPerformed(ActionEvent e) {
+				    	textField.setText(""); 
+				    	operacion = "sas";
+				    	cont=0;
+
+				    }
+				});
+				
+				btnNewButton_7_1.setBackground(new Color(255, 128, 64));
+				btnNewButton_7_1.setBounds(10, 90, 109, 33);
+				getContentPane().add(btnNewButton_7_1);
+				
+				
+		
+				}
+
+
+
+		   
+
+		    
+
+		    }
+

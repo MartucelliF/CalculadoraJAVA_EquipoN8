@@ -1,0 +1,361 @@
+import java.awt.EventQueue;
+
+		import javax.swing.JFrame;
+
+		import javax.swing.JButton;
+
+		import java.awt.event.ActionListener;
+
+		import java.awt.event.ActionEvent;
+
+		import javax.swing.SwingConstants;
+
+		import java.awt.Color;
+
+		import javax.swing.JTextField;
+
+		import java.awt.Font;
+import java.awt.Toolkit;
+import java.text.DecimalFormat;
+	
+		import javax.swing.JTextPane;
+		import javax.swing.JTextArea;
+		import javax.swing.UIManager;
+
+		
+		public class Ecuaciones2x2 extends JFrame {
+			
+			
+			
+			private static final long serialVersionUID = 1L;
+			double numeroa=0;
+			double numerob=0;
+			double numeroc=0;
+			double numerod=0;
+			double numeroe=0;
+			double numerof=0;
+			double A=0;
+			double B=0;
+			double C=0;
+			double D=0;
+			double E=0;
+			double F=0;
+			double d1=0;
+			double e1=0;
+			double f1=0;
+			double resultadox=0;
+			double resultadoy=0;
+			int cont=0;
+			String seleccionar;
+		    private JTextField textField_c;
+		    private JTextField textField_f;
+		    private JTextField textField_a;
+		    private JTextField textField_b;
+		    private JTextField textField_d;
+		    private JTextField textField_e;
+		    private JTextField textField_x;
+		    private JTextField textField_y;
+		    private JTextArea txtrY;
+		    private JTextArea txtrX_2;
+		    private JTextArea txtrX_1;
+		    private JTextArea txtrX_3;
+		    private JTextArea txtrX_4;
+		    public static void main(String[] args) {
+
+		        EventQueue.invokeLater(new Runnable() {
+
+		            public void run() {
+
+		                try {
+
+		                    Ecuaciones2x2 frame = new Ecuaciones2x2();
+		                    frame.setVisible(true);
+
+		                } catch (Exception e) {
+
+		                    e.printStackTrace();
+
+		                }
+
+		            }
+
+		        });
+
+		    }
+
+
+
+		    public Ecuaciones2x2() {
+		    	
+		    
+		    	DecimalFormat df = new DecimalFormat("#.###"); // Se define que no se muestren los ceros de mas en numeros reales
+
+		    	setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+		    	setIconImage(Toolkit.getDefaultToolkit().getImage("iconoepico.png"));
+		    	this.setResizable(false);
+		        setBounds(385, 150, 294, 362);
+		        getContentPane().setLayout(null);
+				
+				
+				
+		        textField_a = new JTextField();
+				textField_a.setHorizontalAlignment(SwingConstants.RIGHT);
+				textField_a.setFont(new Font("Tahoma", Font.PLAIN, 22));
+				textField_a.setColumns(10);
+				textField_a.setBackground(new Color(255, 128, 128));
+				textField_a.setBounds(10, 11, 50, 50);
+				//seleccionar = String.format("%.0f",numeroa);
+				//textField_a.setText(seleccionar);
+				
+				getContentPane().add(textField_a);
+		        
+		        
+				
+				textField_b = new JTextField();
+				textField_b.setHorizontalAlignment(SwingConstants.RIGHT);
+				textField_b.setFont(new Font("Tahoma", Font.PLAIN, 22));
+				textField_b.setColumns(10);
+				textField_b.setBackground(new Color(128, 255, 128));
+				textField_b.setBounds(81, 11, 50, 50);
+				
+				getContentPane().add(textField_b);
+				
+				
+				
+		        textField_c = new JTextField();
+				textField_c.setBackground(new Color(192, 192, 192));
+				textField_c.setHorizontalAlignment(SwingConstants.RIGHT);
+				textField_c.setFont(new Font("Tahoma", Font.PLAIN, 22));
+				textField_c.setColumns(10);
+				textField_c.setBounds(153, 11, 50, 50);
+				
+				getContentPane().add(textField_c);
+				
+				
+								
+				textField_d = new JTextField();
+				textField_d.setHorizontalAlignment(SwingConstants.RIGHT);
+				textField_d.setFont(new Font("Tahoma", Font.PLAIN, 22));
+				textField_d.setColumns(10);
+				textField_d.setBackground(new Color(255, 128, 128));
+				textField_d.setBounds(10, 75, 50, 50);
+				
+				getContentPane().add(textField_d);
+				
+				
+				
+				textField_e = new JTextField();
+				textField_e.setHorizontalAlignment(SwingConstants.RIGHT);
+				textField_e.setFont(new Font("Tahoma", Font.PLAIN, 22));
+				textField_e.setColumns(10);
+				textField_e.setBackground(new Color(128, 255, 128));
+				textField_e.setBounds(81, 75, 50, 50);
+
+				getContentPane().add(textField_e);
+				
+				
+				
+				textField_f = new JTextField();
+				textField_f.setBackground(new Color(192, 192, 192));
+				textField_f.setHorizontalAlignment(SwingConstants.RIGHT);
+				textField_f.setFont(new Font("Tahoma", Font.PLAIN, 22));
+				textField_f.setColumns(10);
+				textField_f.setBounds(153, 75, 50, 50);
+
+				getContentPane().add(textField_f);
+				
+				
+				
+				textField_x = new JTextField();
+				textField_x.setEditable(false);
+				textField_x.setHorizontalAlignment(SwingConstants.RIGHT);
+				textField_x.setFont(new Font("Tahoma", Font.PLAIN, 22));
+				textField_x.setColumns(10);
+				textField_x.setBackground(new Color(255, 128, 128));
+				textField_x.setBounds(40, 195, 85, 50);
+
+				getContentPane().add(textField_x);
+				
+				
+				textField_y = new JTextField();
+				textField_y.setEditable(false);
+				textField_y.setHorizontalAlignment(SwingConstants.RIGHT);
+				textField_y.setFont(new Font("Tahoma", Font.PLAIN, 22));
+				textField_y.setColumns(10);
+				textField_y.setBackground(new Color(128, 255, 128));
+				textField_y.setBounds(40, 262, 85, 50);
+
+				getContentPane().add(textField_y);
+				
+		        
+		        
+				JTextPane sinDatos = new JTextPane();
+				sinDatos.setEditable(false);
+				sinDatos.setBackground(new Color(240, 240, 240));
+				sinDatos.setFont(new Font("Arial", Font.PLAIN, 14));
+				sinDatos.setBounds(153, 207, 115, 105);
+				getContentPane().add(sinDatos);
+				
+				
+				
+				JButton btnNewButton_igual = new JButton("=");
+				btnNewButton_igual.setBackground(new Color(128, 255, 255));
+				btnNewButton_igual.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) 
+				{
+
+					
+				if(textField_a.getText().isEmpty()||textField_b.getText().isEmpty()||textField_c.getText().isEmpty()||textField_d.getText().isEmpty()||textField_e.getText().isEmpty()||textField_f.getText().isEmpty())
+					{
+					sinDatos.setText("COMPLETA TODOS LOS CUADROS, NO TE PASES DE VIVO");
+					}
+				else
+					{	
+					numeroa = Double.parseDouble(textField_a.getText());
+					numerob = Double.parseDouble(textField_b.getText());
+					numeroc = Double.parseDouble(textField_c.getText());
+					numerod = Double.parseDouble(textField_d.getText());
+					numeroe = Double.parseDouble(textField_e.getText());
+					numerof = Double.parseDouble(textField_f.getText());
+					
+					if(numeroa==numerod)    
+				    {
+				    numerod=numeroa-numerod;
+				    numeroe=numerob-numeroe;
+				    numerof=numeroc-numerof;
+				    }
+					if(numeroa<numerod)
+				    {
+				    A=numeroa*numerod;
+				    B=numerob*numerod;
+				    C=numeroc*numerod;
+				    
+				    D=numerod*numeroa;
+				    E=numeroe*numeroa;
+				    F=numerof*numeroa;
+				    
+				    d1=A-D;
+				    e1=B-E;
+				    f1=C-F;
+				    }
+					if(numeroa>numerod)
+				    {
+				    A=numeroa*numerod;
+				    B=numerob*numerod;
+				    C=numeroc*numerod;
+				    
+				    D=numerod*numeroa;
+				    E=numeroe*numeroa;
+				    F=numerof*numeroa;
+				    
+				    d1=D-A;
+				    e1=E-B;
+				    f1=F-C;
+				    }
+				
+					resultadoy=f1/e1;
+					resultadox=(numeroc-(numerob*resultadoy))/numeroa;
+										
+					sinDatos.setText("");
+					seleccionar = df.format(resultadox); // muestra el resultado sin ceros de mas
+					seleccionar = seleccionar.replace(",", "."); // reemplaza las comas (,) a puntos (.) para evitar errores matematicos
+		            textField_x.setText(seleccionar);
+					
+					seleccionar = df.format(resultadoy); // muestra el resultado sin ceros de mas
+					seleccionar = seleccionar.replace(",", "."); // reemplaza las comas (,) a puntos (.) para evitar errores matematicos
+		            textField_y.setText(seleccionar);
+					
+					
+					}
+				
+				}
+		
+				});
+		
+				btnNewButton_igual.setBounds(10, 144, 193, 33);
+				getContentPane().add(btnNewButton_igual);
+		
+		
+		
+				JButton btnNewButton_c = new JButton("C");
+				btnNewButton_c.addActionListener(new ActionListener() {
+				    public void actionPerformed(ActionEvent e) {
+				    	textField_d.setText("");
+				    	textField_c.setText("");
+				    	textField_f.setText("");
+				    	textField_a.setText("");
+				    	textField_b.setText("");
+				    	textField_e.setText("");
+				    	textField_e.setText("");
+				    	textField_x.setText("");
+				    	textField_y.setText("");
+				    	numeroa = 0;
+				    	numerob = 0;
+				    	numeroc = 0;
+				    	numerod = 0;
+				    	numeroe = 0;
+				    	numerof = 0;
+				    	resultadox = 0;
+				    	resultadoy = 0;
+						
+				    }
+				});
+				
+				btnNewButton_c.setBackground(new Color(255, 128, 64));
+				btnNewButton_c.setBounds(220, 11, 50, 166);
+				getContentPane().add(btnNewButton_c);
+				
+				JTextArea txtrX = new JTextArea();
+				txtrX.setEditable(false);
+				txtrX.setBackground(new Color(240, 240, 240));
+				txtrX.setFont(new Font("PMingLiU-ExtB", Font.PLAIN, 18));
+				txtrX.setText("X=");
+				txtrX.setBounds(10, 210, 30, 33);
+				getContentPane().add(txtrX);
+				
+				txtrY = new JTextArea();
+				txtrY.setEditable(false);
+				txtrY.setText("Y=");
+				txtrY.setFont(new Font("PMingLiU-ExtB", Font.PLAIN, 18));
+				txtrY.setBackground(UIManager.getColor("Button.background"));
+				txtrY.setBounds(10, 275, 30, 33);
+				getContentPane().add(txtrY);
+				
+				txtrX_2 = new JTextArea();
+				txtrX_2.setEditable(false);
+				txtrX_2.setText("X");
+				txtrX_2.setFont(new Font("PMingLiU-ExtB", Font.PLAIN, 18));
+				txtrX_2.setBackground(UIManager.getColor("Button.background"));
+				txtrX_2.setBounds(60, 27, 30, 33);
+				getContentPane().add(txtrX_2);
+				
+				txtrX_1 = new JTextArea();
+				txtrX_1.setEditable(false);
+				txtrX_1.setText("X");
+				txtrX_1.setFont(new Font("PMingLiU-ExtB", Font.PLAIN, 18));
+				txtrX_1.setBackground(UIManager.getColor("Button.background"));
+				txtrX_1.setBounds(60, 90, 30, 33);
+				getContentPane().add(txtrX_1);
+				
+				txtrX_3 = new JTextArea();
+				txtrX_3.setEditable(false);
+				txtrX_3.setText("Y");
+				txtrX_3.setFont(new Font("PMingLiU-ExtB", Font.PLAIN, 18));
+				txtrX_3.setBackground(UIManager.getColor("Button.background"));
+				txtrX_3.setBounds(132, 27, 30, 33);
+				getContentPane().add(txtrX_3);
+				
+				txtrX_4 = new JTextArea();
+				txtrX_4.setEditable(false);
+				txtrX_4.setText("Y");
+				txtrX_4.setFont(new Font("PMingLiU-ExtB", Font.PLAIN, 18));
+				txtrX_4.setBackground(UIManager.getColor("Button.background"));
+				txtrX_4.setBounds(132, 90, 30, 33);
+				getContentPane().add(txtrX_4);
+				
+				
+				
+				
+		}
+			
+	}

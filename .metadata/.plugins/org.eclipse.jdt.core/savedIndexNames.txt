@@ -1,0 +1,4 @@
+INDEX VERSION 1.131+E:\!Escuela\2023\LPOO\KRONK CALCULATOR\CalculadoraJAVA_EquipoN8\.metadata\.plugins\org.eclipse.jdt.core
+1601436979.index
+1865797976.index
+1067094681.index
